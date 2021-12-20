@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+  
+  
+  <script src="https://kit.fontawesome.com/0194ea76e0.js" crossorigin="anonymous"></script>
+  <script src="../js/main.js"></script>
+  <script defer src="../js/activePage.js"></script>
+  <title>Dakaria´s Dulce Tentación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ 
+  
+  
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/pagina/img-logo-icon.png">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+   
+    
+
+
+
+  
+</head>
+
+<body>
+    <div class="nav-fixed"> 
+        <div class="nav navbar navbar-expand-lg navbar-light">
+           
+          <div class="container">
+              <a href="../index.html" class="navbar-brand"><img class="nav__logo" src="../img/pagina/logo.png" alt=""></a>
+              
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mdesplegable">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              
+          <div class="collapse navbar-collapse justify-content-end" id="mdesplegable">
+              <nav>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="productos.html" class="nav-link">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="promociones.html" class="nav-link">Promociones</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a href="nosotros.html" class="nav-link">Nosotros</a>
+                </li>
+                </ul>
+              </nav>
+              </div>
+          </div>
+      
+          </div>
+          
+    </div>
+    <main class="main-galeria-all">
+      <h3>Galeria de Productos</h3>
+      <section id="galeria">
+            <img src="../img/productos/pai-de-limon.jpg" alt="">
+            <img src="../img/productos/pai-de-maracuya.jpg" alt="">
+            <img src="../img/productos/torta-3-leches.jpg" alt="">
+            <img src="../img/productos/torta-de-chocolate.jpg" alt="">
+            <img src="../img/productos/tajada-queque.jpg" alt="">
+            <img src="../img/productos/brownie.jpg" alt="">
+            <img src="../img/productos/suspiros-de-fresa.jpg" alt="">
+            <img src="../img/productos/queque.jpg" alt="">
+            <img src="../img/productos/brownies.jpg" alt="">
+     
+        </section>
+
+        <section id="contenedor-principal">
+            <div id="contenedor-interno">
+                <img id="img-activa" src="../img/productos/pai-de-limon.jpg" alt="galeria de imagenes">
+                <button class="btn-galeria-all" id="btn-cierra" type="button">x</button>
+                <button class="btn-galeria-all" id="btn-retrocede" type="button">&lt;</button>
+                <button class="btn-galeria-all" id="btn-adelanta" type="button">&gt;</button>
+            </div>
+        </section>
+    </main>
+<script type="text/javascript">
+/*Variables*/
+
+const btnCierra = document.querySelector('#btn-cierra');
+const btnAdelanta = document.querySelector('#btn-adelanta');
+const btnRetrocede = document.querySelector('#btn-retrocede');
+const imagenes = document.querySelectorAll('#galeria img');
+const lightbox = document.querySelector('#contenedor-principal');
+const imagenActiva = document.querySelector('#img-activa');
+let indiceImagen = 0;
+
+/*Abre el Lightbox*/
+
+const abreLightbox = (event) => {
+  imagenActiva.src = event.target.src;
+  lightbox.style.display = 'flex';
+  indiceImagen = Array.from(imagenes).indexOf(event.target);
+};
+
+imagenes.forEach((imagen) => {
+  imagen.addEventListener('click', abreLightbox);
+});
+
+/*Cierra el Lightbox */
+
+btnCierra.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+/* Adelanta la imagen*/
+
+const adelantaImagen = () => {
+  if (indiceImagen === imagenes.length - 1) {
+    indiceImagen = -1;
+  }
+  imagenActiva.src = imagenes[indiceImagen + 1].src;
+  indiceImagen++;
+};
+
+btnAdelanta.addEventListener('click', adelantaImagen);
+
+/*Retrocede la Imagen*/
+
+const retrocederImagen = () => {
+  if (indiceImagen === 0) {
+    indiceImagen = imagenes.length;
+  }
+  imagenActiva.src = imagenes[indiceImagen - 1].src;
+  indiceImagen--;
+};
+
+btnRetrocede.addEventListener('click', retrocederImagen);
+
+
+
+
+
+</script>
+<p class="copyright">
+  © Todos los derechos reservados Dakaria´s Dulce Tentación 2021.
+</p>
+
+
+  
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+  
+  
+  <script src="https://kit.fontawesome.com/0194ea76e0.js" crossorigin="anonymous"></script>
+  <script src="../js/main.js"></script>
+  <title>Dakaria´s Dulce Tentación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ 
+  
+  
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/pagina/img-logo-icon.png">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+   
+    
+
+
+
+  
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+  <div class="nav-fixed"> 
+    <nav class="nav navbar navbar-expand-lg navbar-light">
+       
+      <div class="container">
+          <a href="../index.html" class="navbar-brand"><img class="nav__logo" src="../img/pagina/logo.png" alt=""></a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mdesplegable">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+      <div class="collapse navbar-collapse justify-content-end" id="mdesplegable">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="../index.html" class="nav-link">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="../pages/productos.html" class="nav-link">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a href="../pages/promociones.html" class="nav-link">Promociones</a>
+            </li>
+            <li class="nav-item">
+                <a href="../pages/galeria.html" class="nav-link">Galeria</a>
+            </li>
+            <li class="nav-item">
+                <a href="../pages/contacto.html" class="nav-link">Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a href="../pages/nosotros.html" class="nav-link">Nosotros</a>
+            </li>
+          </ul>
+          </div>
+      </div>
+  
+      </nav>
+      
+</div>
+
+<div class="wrap">
+    <h2><span>Suspiro de Fresa</span></h2>
+    
+    
+
+    <div class="one-product">
+        
+        <div class="img-product"><img id="imageBox" src="../img/productos/suspiros-de-fresa.jpg" alt="">
+            <div class="product-small-img">
+                <img src="../img/productos/suspiros-de-fresa.jpg" alt="" onclick="myFunction(this)">
+             
+            </div></div>
+        <div class="info-product">
+            <h3 class="card__title">Suspiros de Fresa</h3>
+            <p><i class="fas fa-caret-right"></i>8 porciones S/25</p>
+            <p><i class="fas fa-caret-right"></i>Porcion Personal S/.3.50</p>
+            <p><i class="fas fa-caret-right"></i>Promoción: 24 x S/.22 cada unidad + entrega a domicilio + caja decorativa.</p>
+            <p class="card__precio"><i class="fas fa-caret-right"></i>S/25.00<span>S/35.00</span></p>
+            <a href="https://api.whatsapp.com/send?phone=51964443815&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20Dakaria´s." target="_blank" class="btn card__btn">Realizar Pedido</a>
+        </div>
+    </div>
+    
+    <a href="../pages/productos.html" class="btn card__btn card__btn-all">Regresar</a>
+
+
+</div>
+<p class="copyright">
+    © Todos los derechos reservados Dakaria´s Dulce Tentación 2021.
+  </p>
+<script type="text/javascript">
+    function myFunction(smallImg){
+        var fullImg=document.getElementById("imageBox");
+        fullImg.src=smallImg.src;
+       
+    }
+</script>
+</body>
+
+</html>
